@@ -7,8 +7,15 @@ public class Main {
             System.out.print("$ ");
             Scanner scanner = new Scanner(System.in);
             String input = scanner.nextLine();
-            if(input.equals("exit 0")) return;
-            System.out.println(input + ": command not found");
+            if(input.equals("exit 0")) {
+                return;
+            }
+            else if (input.contains("echo")){
+                String printStatement = input.substring(5);
+                System.out.println(printStatement);
+            }else {
+                System.out.println(input + ": command not found");
+            }
         }
 
     }
